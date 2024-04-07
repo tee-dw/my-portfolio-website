@@ -1,0 +1,383 @@
+.hero-container{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.name-box{
+    border-radius: 10rem;
+    border: 1.5px solid #00ADEF;
+    padding: 0.5rem;
+    width: 20%;
+    text-align: center;
+    justify-content: center;
+    background-color:  #00ADEF;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.name-box .name-caption{
+    color:aliceblue;
+    margin: auto;
+    font-size: 1rem;
+}
+
+.cv-box{
+    border-radius: 5rem;
+    border: 1.5px solid aliceblue;
+    width: 38%;
+    text-align: center;
+    justify-content: center;
+    background-color: aliceblue;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cv-box a{
+    text-decoration: none;
+}
+
+.download-cv{
+    padding: 0.5rem;
+    margin: 0 0.8rem;
+    font-size: 1rem;
+}
+
+.download-cv span{
+    font-size: 1.8rem;
+    margin-left: 0.3rem;
+    position: absolute;
+}
+
+.animated-text {
+    animation-name: changeText;
+    animation-duration: 3s; /* Adjust duration to match interval */
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    color:#14467C;
+    font-weight: bold;
+}
+  
+@keyframes changeText {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+
+.hero-container::after,
+.hero-container::before{
+    content: " ";
+    width: 28rem;
+    height: 28rem;
+    border-radius: 28rem;
+    background: #14467C;
+    position:absolute;
+    z-index: -1;
+    filter:blur(225px);
+}
+
+.hero-container::after{
+    top: -3rem;
+    left: -5rem;
+}
+
+.hero-container::before{
+    bottom: 2rem;
+    right: 0rem;
+}
+
+.hero-content{
+    flex: 1;
+}
+
+.hero-content h2{
+    font-size: 3.8rem;
+    font-weight: 600;
+    line-height: 5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p{
+    width: 80%;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 2rem;
+}
+
+.hero-img{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 5rem;
+}
+
+.hero-img > div{
+    display: flex;
+    align-items: flex-end;
+    gap: 2rem;
+}
+
+.hero-img > div > img{
+    width: 25rem;
+    transition: all 0.3s ease;
+}
+
+.tech-icon{
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 0.65rem;
+    border: 1.5px solid #14467C;
+}
+
+.tech-icon img{
+    width: 3rem;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+.hero-img > div > img:hover, .tech-icon img:hover{
+    transform: translateY(-0.5rem);
+}
+
+@media (max-width: 1025px){
+    .hero-container{
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .hero-content h2{
+        font-size: 2.5rem;
+        line-height: 4rem;
+    }
+
+    .hero-content p{
+        font-size: 0.9rem;
+        line-height: 1.6rem;
+    }
+
+    .hero-img > div > img{
+        width: 20rem;
+    }
+
+    .name-box{
+        border-radius: 5rem;
+        border: 1.5px solid #00ADEF;
+        padding: 0.5rem 0rem;
+        width: 25%;
+        text-align: center;
+        justify-content: center;
+        background-color:  #00ADEF;
+    }
+    
+    .name-box .name-caption{
+        color:aliceblue;
+        margin: auto;
+        font-size: 1rem;
+    }
+
+    .cv-box{
+        width: 45%;
+        position: relative;
+    }
+    
+    .cv-box .download-cv{
+        padding: 0.5rem;
+        margin: 0 0.5rem;
+        font-size: 1rem;
+    }
+    
+    .cv-box .download-cv span{
+        font-size: 1.5rem;
+        position: absolute;
+    }
+
+    .tech-icon{
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .tech-icon img{
+        width: 2.5rem;
+    }
+}
+
+@media (max-width: 768px){
+    .hero-container{
+        flex-direction: column;
+        margin-top: 4rem;
+    }
+
+    .hero-img{
+        margin: 2rem 0 2rem 0
+    }
+
+    .hero-container h2{
+        margin-top: 3rem;
+    }
+
+    .hero-content h2, .hero-content p{
+        width: 80%;
+        text-align: center;
+        margin: auto;
+    }
+
+    .hero-content p{
+        font-size: 1rem;
+    }
+
+    .hero-container::after, .hero-container::before{
+        content: " ";
+        width: 18rem;
+        height: 18rem;
+    }
+
+    .hero-container::after{
+        top: 0rem;
+        left: 0rem;
+    }
+    .hero-container::before{
+        bottom: 2rem;
+        right: 0rem;
+    }
+
+    .name-box{
+        border-radius: 5rem;
+        border: 1.5px solid #00ADEF;
+        padding: 0.5rem 0rem;
+        width: 15%;
+        margin: auto;
+        text-align: center;
+        justify-content: center;
+        background-color:  #00ADEF;
+    }
+    
+    .name-box .name-caption{
+        color:aliceblue;
+        margin: auto;
+        font-size: 0.9rem;
+    }
+
+    .cv-box{
+        width: 25%;
+        position: relative;
+        margin: 1rem auto;
+    }
+    
+    .cv-box .download-cv{
+        padding: 0.5rem;
+        margin: 0 0.5rem;
+        font-size: 1rem;
+    }
+    
+    .cv-box .download-cv span{
+        font-size: 1.5rem;
+        position: absolute;
+    }
+}
+
+@media (max-width: 426px){
+    .hero-container{
+        max-width: 350px;
+        margin: 3rem auto;
+    }
+
+    .hero-content h2, .hero-content p{
+        width: auto;
+        text-align: center;
+        margin: auto;
+    }
+
+    .hero-content .cv-box{
+        width: 40%;
+        position: relative;
+        margin: 1rem auto;
+    }
+    
+    .hero-content .cv-box .download-cv{
+        padding: 0.5rem;
+        margin-right: 1.2rem;
+        font-size: 0.6rem;
+    }
+    
+    .hero-content .cv-box .download-cv span{
+        font-size: 1.2rem;
+        position: absolute;
+    }
+
+    .hero-content h2{
+        font-size: 2rem;
+        line-height: 3rem;
+        margin-top: 1rem;
+    }
+    
+    .hero-content p{
+        font-size: 0.7rem;
+        line-height: 1.3rem;
+    }
+
+    .hero-img{
+        gap: 1rem;
+    }
+
+    .hero-img > div{
+        gap: 1rem;
+    }
+
+    .hero-img > div > img{
+        width: 16rem;
+    }
+
+    .name-box{
+        width: 20%;
+        margin: auto;
+    }
+    
+    .name-box .name-caption{
+        color:aliceblue;
+        margin: auto;
+        font-size: 0.7rem;
+        font-weight: 600;
+    }
+
+    .cv-box{
+        width: 30%;
+        position: relative;
+        margin: 1rem auto;
+    }
+    
+    .cv-box .download-cv{
+        padding: 0.5rem;
+        margin: 0 0.2rem;
+        font-size: 0.6rem;
+    }
+    
+    .cv-box .download-cv span{
+        font-size: 1.2rem;
+        position: absolute;
+    }
+
+    .tech-icon{
+        width: 3.3rem;
+        height: 3.3rem;
+    }
+
+    .tech-icon img{
+        width: 2rem;
+    }
+    
+}

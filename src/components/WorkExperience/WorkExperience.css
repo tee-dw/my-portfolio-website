@@ -1,0 +1,104 @@
+.experience-container{
+    margin: 4rem 0;
+    position: relative;
+}
+
+.experience-container h5{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+}
+
+.arrow-right, .arrow-left{
+    width: 2.2rem;
+    height: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #14467c;
+    border-radius: 0.65rem;
+    border: 1.5px solid #14467c;
+    background: aliceblue;
+    position: absolute;
+    top: 55%;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.arrow-left span, .arrow-right span{
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.arrow-left{
+    left: -2rem;
+}
+
+.arrow-right{
+    right: -2rem;
+}
+
+.experience-container::after,
+.experience-container::before{
+    content: " ";
+    width: 28rem;
+    height: 28rem;
+    border-radius: 28rem;
+    background: #14467C;
+    position:absolute;
+    z-index: -1;
+    filter:blur(225px);
+}
+
+.experience-container::after{
+    top: 3rem;
+    left: 5rem;
+}
+
+.experience-container::before{
+    background: #00ADEF;
+    bottom: -5rem;
+    right: 20rem;
+}
+
+@media (max-width: 1025px){
+    .experience-container{
+        max-width: 900px;
+        margin: 3rem auto;
+    }
+
+    .arrow-left{
+        left: 0rem;
+    }
+
+    .arrow-right{
+        right: 0rem;
+    }
+}
+
+@media (max-width: 768px){
+    .experience-container{
+        max-width: 650px;
+        margin: 3rem auto;
+    }
+
+    .experience-container h5{
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+    }
+
+    .arrow-left{
+        left: -1rem;
+    }
+
+    .arrow-right{
+        right: -1rem;
+    }
+}
+
+@media (max-width: 426px){
+    .experience-container{
+        max-width: 370px;
+        margin: 3rem auto;
+    }
+}

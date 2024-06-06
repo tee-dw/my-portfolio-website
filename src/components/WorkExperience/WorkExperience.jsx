@@ -40,11 +40,11 @@ const WorkExperience = () => {
 
         <div className='experience-content'>
             <div className='arrow-right' onClick={slideRight}>
-                <span class="material-symbols-outlined">chevron_right</span>
+                <span className="material-symbols-outlined">chevron_right</span>
             </div>
 
             <div className='arrow-left' onClick={slideLeft}>
-                <span class="material-symbols-outlined">chevron_left</span>
+                <span className="material-symbols-outlined">chevron_left</span>
             </div>
 
             <Slider ref={sliderRef} {...settings}>

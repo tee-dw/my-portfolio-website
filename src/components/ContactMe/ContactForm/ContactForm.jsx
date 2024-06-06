@@ -17,7 +17,7 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
       e.preventDefault();
       // Send form data to backend server
-      fetch('http://localhost:3001/api/send-email', {
+      fetch('http://localhost:5000/api/send-email', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json'
@@ -40,11 +40,11 @@ const ContactForm = () => {
     <div className='contact-form-content' id="contact">
         <form action="" onSubmit={handleSubmit}>
             <div className='name-container'>
-                <input type="text" name="firstname" placeholder='First Name' value={formData.firstname} onChange={handleChange} />
-                <input type="text" name="lastname" placeholder='Last Name' value={formData.lastname} onChange={handleChange} />
+                <input type="text" name="firstname" placeholder='First Name' value={formData.firstname} onChange={handleChange} required />
+                <input type="text" name="lastname" placeholder='Last Name' value={formData.lastname} onChange={handleChange} required />
             </div>
-            <input type="text" name="email" placeholder='Email' value={formData.email} onChange={handleChange} />
-            <textarea type="text" name="message" placeholder='Message' rows={3} value={formData.message} onChange={handleChange}></textarea>
+            <input type="text" name="email" placeholder='Email' value={formData.email} onChange={handleChange} required />
+            <textarea type="text" name="message" placeholder='Message' rows={3} value={formData.message} onChange={handleChange} required></textarea>
             <button type='submit' name='send-email'>Send</button>
         </form>
 

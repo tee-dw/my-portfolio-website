@@ -8,10 +8,10 @@ const Hero = () => {
         const [currentTextIndex, setCurrentTextIndex] = useState(0); // State to track the current text index
       
         useEffect(() => {
-          // Function to cycle through the texts every 3 seconds
+          // Function to cycle through the texts every 3.5 seconds
           const interval = setInterval(() => {
             setCurrentTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
-          }, 3000);
+          }, 3500);
       
           // Clear the interval when component unmounts
           return () => clearInterval(interval);
@@ -30,7 +30,7 @@ const Hero = () => {
                 I am a passionate frontend-focused fullstack developer and <span>I transform ideas into seamless and visually stunning web solutions</span>
             </p>
             <div className='cv-box'>
-                <a href="https://drive.google.com/file/d/1BtqtMcS93udQKXfV1OfbuQEVnEqumle2/view?usp=sharing"><p className='download-cv'>Download CV <span class="material-symbols-outlined">description</span></p></a>
+                <a href="https://drive.google.com/file/d/1BtqtMcS93udQKXfV1OfbuQEVnEqumle2/view?usp=sharing"><p className='download-cv'>Download CV <span className="material-symbols-outlined">description</span></p></a>
             </div>
         </div>
 

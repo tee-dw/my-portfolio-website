@@ -1,10 +1,18 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+const cors = require('cors');
+require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 5000;
 
+const corsOptions = {
+    origin: 'http://localhost:3002',
+    optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 // POST endpoint to handle form submission
@@ -15,18 +23,19 @@ app.post('/api/send-email', (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
-            user: 'tboltz1808@gmail.com',
-            pass: 'deeperwalk2020'
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS
         }
     });
 
     // Configure email data
     const mailOptions = {
-        from: 'tboltz1808@gmail.com',
+        from: email,
         to: 'tboltz1808@gmail.com',
-        subject: 'New Contact Form Submission',
+        subject: `New Contact Form Submission from ${firstname} ${lastname}`,
         html: `
             <h2>New Contact Form Submission</h2>
+            <p>You have received a new message from your website contact form. Here are the details:</p>
             <p><strong>First Name:</strong> ${firstname}</p>
             <p><strong>Last Name:</strong> ${lastname}</p>
             <p><strong>Email:</strong> ${email}</p>

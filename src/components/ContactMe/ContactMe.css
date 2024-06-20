@@ -14,6 +14,11 @@
     gap: 3rem;
 }
 
+.contact-content a{
+    text-decoration: none;
+    color: black;
+}
+
 @media (max-width: 1025px) {
 
     .contact-container{

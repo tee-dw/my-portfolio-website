@@ -1,50 +1,43 @@
-import React, { useState } from 'react';
+import React from 'react';
+import Swal from 'sweetalert2'
 import "./ContactForm.css"
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-      firstname: '',
-      lastname: '',
-      email: '',
-      message: ''
-  });
 
-  const handleChange = (e) => {
-      const { name, value } = e.target;
-      setFormData({ ...formData, [name]: value });
-  };
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+  
+      formData.append("access_key", "650e8d33-9f8e-4bbe-bc65-9178b3d19995");
+  
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+  
+      const data = await response.json();
+  
+      if (data.success) {
+        Swal.fire({
+            title: "Success!",
+            text: "Message sent successfully!",
+            icon: "success"
+        });
+      } else {
+        console.log("Error", data);
+      }
 
-  const handleSubmit = (e) => {
-      e.preventDefault();
-      // Send form data to backend server
-      fetch('http://localhost:5000/api/send-email', {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(formData)
-      })
-      .then(response => {
-          if (response.ok) {
-              // Handle successful form submission
-              console.log('Email sent successfully');
-          } else {
-              // Handle form submission error
-              console.error('Failed to send email');
-          }
-      })
-      .catch(error => console.error('Error:', error));
   };
 
   return (
     <div className='contact-form-content' id="contact">
-        <form action="" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <div className='name-container'>
-                <input type="text" name="firstname" placeholder='First Name' value={formData.firstname} onChange={handleChange} required />
-                <input type="text" name="lastname" placeholder='Last Name' value={formData.lastname} onChange={handleChange} required />
+                <input type="text" name="firstname" placeholder='First Name' required />
+                <input type="text" name="lastname" placeholder='Last Name' required />
             </div>
-            <input type="text" name="email" placeholder='Email' value={formData.email} onChange={handleChange} required />
-            <textarea type="text" name="message" placeholder='Message' rows={3} value={formData.message} onChange={handleChange} required></textarea>
+            <input type="text" name="email" placeholder='Email' required />
+            <textarea type="text" name="message" placeholder='Message' rows={4} required></textarea>
             <button type='submit' name='send-email'>Send</button>
         </form>
 

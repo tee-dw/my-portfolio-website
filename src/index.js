@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import 'https://smtpjs.com/v3/smtp.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

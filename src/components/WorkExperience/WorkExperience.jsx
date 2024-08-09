@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import "./WorkExperience.css"
 import { WORK_EXPERIENCE } from '../../utils/data'
 import ExperienceCard from './ExperienceCard/ExperienceCard'

@@ -54,13 +54,13 @@ export const WORK_EXPERIENCE = [
         ],
     },
     {
-        title: "Frontend Developer at EliteFrames by Atirira",
-        date: "February 2024 - Present",
+        title: "Software Developer (PHP, OOP, JavaScript, jQuery, MySQL)",
+        date: "Dec 2023 - Present",
         responsibilities: [
-            "Worked with a team to redesign the company's website from vue 2 and nuxt 2 to vue 3 and nuxt 3, resulting in a 30% increase in their user satisfaction.",
-            "Enhanced the overall user experience by implememting advanced CSS animations and transitions.",
-            "Integrated Vue.js and Nuxt.js 3 into the tech stack, improving code maintainability and development efficiency.",
-            "Transformed mockups and images into responsive and interactive web application.",
+            "Developed User Management System: Implemented features for user registration, login, profile management, and role-based access control to ensure secure and personalized experiences for patients, therapists, and administrators.",
+            "Built Therapist Search Functionality: Created an advanced search and filtering system to help users find therapists based on criteria such as specialization, location, and availability.",
+            "Engineered Booking System: Designed and developed a comprehensive booking system allowing users to schedule and manage appointments.",
+            "Integrated Paystack API: Seamlessly integrated Paystack API for secure payment processing, including features for handling subscriptions and one-time payments.",
         ],
     },
     {
